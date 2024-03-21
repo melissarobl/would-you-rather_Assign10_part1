@@ -14,6 +14,8 @@ const userSelection = ref('')
 function updateUserSelection(userChoice){
   userSelection.value = `Thanks! You Chose: ${userChoice}`
 }
+//what is in choice.value in child will end up as the argument, userChoice
+// then userChoice will be set as userSelection.value and can be used by parent
 
 </script>
 
@@ -29,8 +31,12 @@ function updateUserSelection(userChoice){
         v-bind:answer2="wyrAnswer2"
         v-on:answer-selected="updateUserSelection"
     ></WouldYouRather>
+    <!--when answer-selected is received, updateUserSelection event is called -->
 
-    <p>{{ userSelection }}</p>
+    <p> {{ userSelection }}</p>
+
+    <!--userSelection can be displayed because it is made available through function updateUserSelection -->
+
 
   </div>
 
@@ -46,7 +52,8 @@ function updateUserSelection(userChoice){
 }
 
 p{
-  font-family: "Bauhaus 93";
-  font-size: 20px;
+  font-family: Gabriola;
+  font-size: 30px;
+  color: blanchedalmond;
 }
 </style>
